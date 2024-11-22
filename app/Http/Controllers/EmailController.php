@@ -51,10 +51,11 @@ class EmailController extends Controller
 
 
         $data = $request->only([
-            'name', 'lastname', 'phone', 'email', 'beneficiare', 'beneficiare_rib', 'address'
+            'name', 'lastname', 'phone', 'email', 'beneficiare', 'beneficiare_rib', 'address',
+            'mark', 'model', 'color', 'registration', 'mileage'
         ]);
 
-        Mail::to('contact@hellodata.tn')->send(new MyMailable($data, $files));
+        Mail::to('contact@vtcconnectparis.fr')->send(new MyMailable($data, $files));
 
         return response()->json(['message' => 'Email sent successfully!']);
     }

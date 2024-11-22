@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('send-email',[EmailController::class,'sendEmail']);
 Route::get('/test-email', function () {
     Mail::raw('This is a test email!', function ($message) {
-        $message->to('contact@hellodata.tn')
+        $message->to('contact@vtcconnectparis.fr')
                 ->subject('Test Email');
     });
 
