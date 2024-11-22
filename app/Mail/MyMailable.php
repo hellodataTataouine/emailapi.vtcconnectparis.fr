@@ -25,6 +25,7 @@ class MyMailable extends Mailable
                       ->with(['data' => $this->data]);
 
         // Attach each file
+        $email->subject('Inscription sur la plateforme - ' . $this->data['name']);
         foreach ($this->files as $file) {
             $email->attach(storage_path('app/' . $file)); // Adjust the path as necessary
         }
